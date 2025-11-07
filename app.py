@@ -47,7 +47,7 @@ def extract_features(seq):
 @st.cache_data
 def load_data():
     path = "/mnt/c/Users/swamy/Downloads/ML_1/Protein Solubility Prediction Benchmark datasets/Protein Solubility Prediction Benchmark datasets/esol_train.csv"
-    df = pd.read_csv(path)
+    df = pd.read_csv("ecoli_train.csv")
     seq_col = [c for c in df.columns if "seq" in c.lower()][0]
     label_col = [c for c in df.columns if "sol" in c.lower() or "label" in c.lower()][0]
     df = df[[seq_col, label_col]].dropna()
